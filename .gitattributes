@@ -1,7 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-HistoryGenerator/Assets/StreamingAs.../libundreamai_linux-cuda-cu12.2.0.so filter=lfs diff=lfs merge=lfs -text
-HistoryGenerator/Assets/StreamingAs.../undreamai-v1.2.6-1.../cublaslt64_12.dll filter=lfs diff=lfs merge=lfs -text
-HistoryGenerator/Assets/StreamingAs.../undreamai_windows-cuda-cu12.2.0-full.dll filter=lfs diff=lfs merge=lfs -text
 *.dll filter=lfs diff=lfs merge=lfs -text
 *.so filter=lfs diff=lfs merge=lfs -text

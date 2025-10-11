@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186051832}
   - component: {fileID: 186051831}
+  - component: {fileID: 186051833}
   m_Layer: 0
   m_Name: Sassy NPC
   m_TagString: Untagged
@@ -281,6 +282,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &186051833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186051830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5f252c574cc7448472eeef660bb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &197572103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,13 +2190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50e3140c3ecaaf1c848dbf141cc2074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  advancedOptions: 0
+  advancedOptions: 1
   remote: 0
   port: 13333
   numThreads: -1
   numGPULayers: 0
   debug: 0
-  parallelPrompts: -1
+  parallelPrompts: 99
   dontDestroyOnLoad: 1
   contextSize: 8192
   batchSize: 512
@@ -2429,6 +2442,7 @@ GameObject:
   - component: {fileID: 1325062605}
   - component: {fileID: 1325062604}
   - component: {fileID: 1325062607}
+  - component: {fileID: 1325062608}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2449,7 +2463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionGenerator: {fileID: 2006586600}
-  numArtifactOptions: 
   numArtifacts: 10
 --- !u!114 &1325062605
 MonoBehaviour:
@@ -2494,6 +2507,18 @@ MonoBehaviour:
   - {fileID: 186051830}
   - {fileID: 1878818013}
   activeTourGuide: {fileID: 186051830}
+--- !u!114 &1325062608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325062603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8adde189dca158d4e8c96b5c4b1ce896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1385851825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,6 +2894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878818015}
   - component: {fileID: 1878818014}
+  - component: {fileID: 1878818016}
   m_Layer: 0
   m_Name: Rude NPC
   m_TagString: Untagged
@@ -2946,6 +2972,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878818016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878818013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b5f252c574cc7448472eeef660bb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940009116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,6 +3071,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1325062608}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3221,7 +3271,8 @@ MonoBehaviour:
   playerName: 
   AIName: 
   prompt: "You are a utility model. \r\nRespond with only the information requested.
-    \r\nDo not include extra commentary, filler, or explanations unless asked."
+    \r\nDo not include extra commentary, filler, or explanations unless asked. Try
+    to give answers that are different from previous answers."
   setNKeepToPrompt: 1
   chat: []
   grammarString: 

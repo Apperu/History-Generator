@@ -3,12 +3,20 @@ using UnityEngine;
 
 public class TourGuideManager : MonoBehaviour
 {
+    public enum ActiveTourGuide
+    {
+        Sassy = 0,
+        Rude,
+        NumTourGuides
+    };
+
     ArtifactManager am;
     LLMCharacter activeTourGuideLLMCharacter;
 
-
     public GameObject[] tourGuides;
     public GameObject activeTourGuide;
+
+    public ActiveTourGuide activeTourGuideIndex = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -24,6 +32,7 @@ public class TourGuideManager : MonoBehaviour
     {
         activeTourGuide = tourGuides[index];
         activeTourGuideLLMCharacter = activeTourGuide.GetComponent<LLMCharacter>();
+        activeTourGuideIndex = (ActiveTourGuide)index;
     }
 
     public void DescribeArtifact(string name)
